@@ -1,0 +1,135 @@
+body {
+	margin: 0;
+	position: relative;
+	overflow-x: hidden;
+}
+
+.humburger {
+	padding: 10px;
+}
+
+.ingredients {
+    display: block;
+    margin-bottom: 14px;
+    position: relative;
+	
+		&__list {
+			list-style: none;
+		}
+	
+		&__item {
+			margin-bottom: 5px;
+		}
+	
+		&__label {
+			cursor: pointer;
+		}
+	
+		&__input {
+			position: absolute;
+			visibility: hidden;
+
+			&:checked + .ingredients__elem {
+				border-color: black;
+
+				&:after {
+						width: 16px;
+						height: 16px;
+						background: black;
+				}
+			}
+
+			// &:checked + .ingredients__elem + .ingredients__text {
+			// 	color: black;
+			// }
+		}
+
+    &__elem {
+        width: 20px;
+        height: 20px;
+        margin-right: 12px;
+        border: 1px solid #c0c0c0;
+        position: relative;
+        transition: all .3s;
+        display: inline-block;
+        vertical-align: middle;
+
+        &:after {
+            display: block;
+            content: '';
+            width: 0;
+            height: 0;
+            background: #c0c0c0;
+            transition: all .3s;
+           	position: absolute;
+						top: 0;
+						right: 0;
+						bottom: 0;
+						left: 0;
+						margin: auto;
+        }
+    }
+
+    &__text {
+        display: inline-block;
+        color: #c0c0c0;
+        text-transform: uppercase;
+        vertical-align: middle;
+    }
+}
+
+
+.btn {
+	@extend .ingredients__text;
+	display: inline-block;
+	padding: 10px;
+	text-decoration: none;
+	background: lighten(black, 20%);
+	
+	&:hover {
+		background: #000;
+	}
+}
+
+.modal {
+	display: none;
+	width: 100%;
+	height: 100%;
+	padding: 20px;
+	background: fade-out(#000, .3);
+	position: absolute;
+	top: 0;
+	left: 0;
+	
+	&__inner {
+		width: 50%;
+		margin: auto;
+		position: absolute;
+		top: 50%;
+		right: 0;
+		left: 0;
+		transform: translateY(-50%);
+	}
+	
+	&__title {
+		@extend .ingredients__text;
+	}
+	
+	&__content {
+		margin: 20px 0;
+		padding: 10px;
+		background: fade-out(#000, .3);
+		
+		&-title {
+			color: #fff;
+		}
+	}
+	
+	&__list {
+		list-style: none;
+	}
+	
+	&__text {
+		@extend .ingredients__text;
+	}
+}

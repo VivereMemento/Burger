@@ -1,0 +1,15 @@
+extends ../base
+block title
+	| Index page
+block main
+	.humburger
+		h1.title
+		.ingredients
+			a(id='btn-order' class='btn btn_order' href='#') Заказать
+			
+	.modal
+		.modal__inner
+			.modal__title
+				| Ваш заказ:
+			.modal__content
+			a(id='btn-confirm' class='btn btn_confirm' href='#') Подтвердить заказ
