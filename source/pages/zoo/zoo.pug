@@ -1,0 +1,82 @@
+extends ../base
+block title
+	| Index page
+block main
+	-
+		var species = [
+			'mammals',
+			'birds',
+			'fishes',
+			'reptile'
+		]
+		
+	-
+		var food = [
+			'herbivore',
+			'carnivore'
+		]
+	.modal
+		.modal__close-btn
+		.modal__inner
+			.modal__title
+		
+	.zoo
+		h1.zoo__title My amazing zoo
+		.zoo__content
+			.zoo__creater
+				h3.zoo__creater-title
+					| Create animal
+				#species.zoo__creater-item
+					h4.zoo__creater-item-title
+						| Choose species of the animal
+					each item in species
+						label.zoo__creater-radio-label
+							input.zoo__creater-radio(type="radio" name="species" data-zone="" + item)
+							div.zoo__creater-elem
+							div.zoo__creater-text #{item}
+				
+				#food.zoo__creater-item
+					h4.zoo__creater-item-title
+							| Choose type of food of the animal
+					each item in food
+						label.zoo__creater-radio-label
+							input.zoo__creater-radio(type="radio" name="food" data-food="" + item)
+							div.zoo__creater-elem
+							div.zoo__creater-text #{item}
+				#type.zoo__creater-item
+					.zoo__creater-input-wrap
+						input.zoo__creater-input(type='text' required)
+						label.zoo__creater-label Enter type of the animal
+				#name.zoo__creater-item
+					.zoo__creater-input-wrap
+						input.zoo__creater-input(type='text' required)
+						label.zoo__creater-label Enter name of the animal
+				#phrase.zoo__creater-item
+					.zoo__creater-input-wrap
+						input.zoo__creater-input(type='text' required)
+						label.zoo__creater-label Enter phrase of the animal
+				#speed.zoo__creater-item
+					.zoo__creater-input-wrap
+						input.zoo__creater-input(type='number' required)
+						label.zoo__creater-label Enter speed of the animal
+
+				a#add-btn.btn(href='#') Create Animal
+				a#delete-btn.btn(href='#') Delete Animal
+				a#info-btn.btn(href='#') Information about animal
+			.zoo__zones
+				.zoo__zones-item
+					span.zoo__zones-title mammals
+					span.zoo__zones-count numbers of animals
+						span
+				.zoo__zones-item
+					span.zoo__zones-title birds
+					span.zoo__zones-count numbers of animals
+						span
+				.zoo__zones-item
+					span.zoo__zones-title fishes
+					span.zoo__zones-count numbers of animals
+						span
+				.zoo__zones-item
+					span.zoo__zones-title reptiles
+					span.zoo__zones-count numbers of animals
+						span
