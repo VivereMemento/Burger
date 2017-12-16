@@ -1,4 +1,4 @@
-class Modal {
+class Model {
 	consturctor(name) {
 		this.name = name;
 	}
@@ -19,6 +19,6 @@ class Modal {
 	}
 }
 
-const modal = new Modal;
+const model = new Model;
 
-export default modal;
+export default model;

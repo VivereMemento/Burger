@@ -1,4 +1,4 @@
-import modal from './modal';
+import model from './model';
 import view from './view';
 
 class Controller {
@@ -7,7 +7,7 @@ class Controller {
 	}
 
 	invokeXHR() {
-		modal.sendAjax('https://www.json-generator.com/api/json/get/clvfzayBea?indent=2').then(response => {
+		model.sendAjax('https://www.json-generator.com/api/json/get/clvfzayBea?indent=2').then(response => {
 			let result = JSON.parse(response);
 			let ingredients = [];
 			
